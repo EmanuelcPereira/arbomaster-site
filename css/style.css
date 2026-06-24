@@ -72,6 +72,23 @@ button { cursor: pointer; }
 .btn-whatsapp { background: var(--whatsapp); color: var(--branco); }
 .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); }
 
+.btn:focus-visible,
+.carousel-btn:focus-visible,
+.lightbox-close:focus-visible,
+.nav-hamburger:focus-visible,
+.carousel-dot:focus-visible,
+.gallery-item:focus-visible,
+.social-link:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+.nav-links a:focus-visible {
+  color: var(--dourado);
+  outline: 2px solid var(--dourado);
+  outline-offset: 2px;
+}
+
 /* ===== ANIMAÇÃO FADE-IN ===== */
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -111,15 +128,15 @@ button { cursor: pointer; }
 .nav-links a:hover { color: var(--dourado); }
 
 .nav-cta {
-  background: var(--whatsapp) !important;
-  color: var(--branco) !important;
+  background: var(--whatsapp);
+  color: var(--branco);
   padding: 10px 18px;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   gap: 6px;
 }
-.nav-cta:hover { background: #1ebe57 !important; color: var(--branco) !important; }
+.nav-cta:hover { background: #1ebe57; color: var(--branco); }
 
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
 .nav-hamburger span { display: block; width: 25px; height: 2px; background: var(--branco); transition: var(--transition); border-radius: 2px; }
@@ -142,7 +159,7 @@ button { cursor: pointer; }
   .nav-links.open { max-height: 400px; border-top: 1px solid rgba(255,255,255,0.1); }
   .nav-links li { width: 100%; }
   .nav-links a { display: block; padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .nav-cta { margin: 12px 20px !important; justify-content: center; }
+  .nav-cta { margin: 12px 20px; justify-content: center; }
 }
 
 /* ===== HERO ===== */
@@ -192,6 +209,7 @@ button { cursor: pointer; }
   gap: 32px;
   margin-top: 48px;
 }
+@media (max-width: 1024px) { .proposta-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .proposta-grid { grid-template-columns: 1fr; gap: 24px; } }
 
 .proposta-item {
@@ -238,7 +256,7 @@ button { cursor: pointer; }
   margin-top: 48px;
 }
 @media (max-width: 1024px) { .servicos-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px)  { .servicos-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px)  { .servicos-grid { grid-template-columns: 1fr; } }
 
 .servico-card {
   background: var(--branco);
@@ -415,7 +433,7 @@ button { cursor: pointer; }
   border-radius: 50%;
   background: rgba(255,255,255,0.3);
   border: none;
-  transition: all var(--transition);
+  transition: background var(--transition), width var(--transition), border-radius var(--transition);
 }
 .carousel-dot.active { background: var(--dourado); width: 24px; border-radius: 4px; }
 
@@ -467,6 +485,7 @@ button { cursor: pointer; }
   gap: 48px;
   margin-bottom: 40px;
 }
+@media (max-width: 1024px) { .rodape-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) { .rodape-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 .rodape-logo { height: 48px; width: auto; margin-bottom: 16px; }
